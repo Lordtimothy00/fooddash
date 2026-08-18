@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FoodFlow UI System</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <header class="topbar" aria-label="Dashboard header">
+      <div>
+        <p class="location">Lekki Phase 1, Lagos</p>
+        <h1>Good afternoon, Albert</h1>
+        <p class="muted">Hungry? We have got you covered.</p>
+      </div>
+      <form class="search" role="search" aria-label="Search restaurants and meals">
+        <label class="sr-only" for="global-search">Search meals or restaurants</label>
+        <span aria-hidden="true" class="search-mark">⌕</span>
+        <input id="global-search" type="search" placeholder="What would you like to eat today?" autocomplete="off" />
+        <button class="button primary" type="submit">Search</button>
+      </form>
+    </header>
+    <main id="main" class="layout">
+      <section class="content-stack" aria-label="Food delivery dashboard">
+        <div id="active-order"></div>
+        <section aria-labelledby="categories-title"><div class="section-head"><h2 id="categories-title">Categories</h2></div><div id="categories" class="category-grid"></div></section>
+        <section aria-labelledby="featured-title"><div class="section-head"><h2 id="featured-title">Featured</h2><button class="link-button" type="button">See all</button></div><div id="featured" class="horizontal-list" aria-live="polite"></div></section>
+        <section aria-labelledby="recommended-title"><div class="section-head"><h2 id="recommended-title">Recommended for you</h2><button class="link-button" type="button">See all</button></div><div id="recommended" class="product-grid"></div></section>
+        <section aria-labelledby="reorder-title"><div class="section-head"><h2 id="reorder-title">Order again</h2></div><div id="reorder" class="stack"></div></section>
+        <section aria-labelledby="stores-title">
+          <div class="section-head compact"><div><h2 id="stores-title">All Stores</h2><p class="muted"><span id="store-count">0</span> stores</p></div><label><span class="sr-only">Sort stores</span><select id="sort-select"><option value="relevance">Relevance</option><option value="rating">Top rated</option><option value="eta">Fastest delivery</option></select></label></div>
+          <div id="filters" class="filter-row" role="group" aria-label="Store filters"></div><div id="stores" class="store-grid" aria-live="polite"></div>
+        </section>
+      </section>
+      <aside class="sidebar" aria-label="Account and notifications"><div id="wallet"></div><section class="panel" aria-labelledby="notifications-title"><div class="section-head compact"><h2 id="notifications-title">Notifications</h2><button class="link-button" type="button">Mark all read</button></div><div id="notifications" class="notification-list"></div></section></aside>
+    </main>
+  </div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
